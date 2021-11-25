@@ -36,3 +36,71 @@
     transform: rotate(360deg);
   }
 }
+
+.productDetails-nav{
+  background-color:rgb(205, 205, 205);
+}
+
+.productDetails-name {
+  font-size: 3rem;
+}
+
+.productDetails-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  width: 90px;
+  /* padding: 2rem 1rem; */
+  background-color: rgb(50, 122, 230);
+  color: white;
+  border-radius: 7%;
+  margin-bottom: 2rem;
+}
+
+.grey-review-header{
+  background-color:rgb(205, 205, 205);
+  border:1px;
+  padding: 1rem;
+}
+
+.add-review-reminder {
+  /* Same bg color as jumbotron */
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.review-padding{
+  padding: 0.4rem;
+  padding-top: 0.5rem;
+  border: 1px;
+}
+
+.review-form{
+  padding-top: 2rem;
+}
+.review-subhead{
+  color: rgb(162, 162, 162);
+  padding-right: 0px;
+  margin-right: 0px;
+  display: inline-block;
+}
+.submit-button{
+  margin-top: 1rem;
+}
+
+.name-rating-box {
+  display: flex;
+}
+
+.input-name {
+  flex-grow: 9;
+}
+.select-rating {
+  flex-grow: 1;
+  margin-left: 1.5rem;
+}
+.align-right {
+  float: right;
+  margin-right: 2em;
+}
