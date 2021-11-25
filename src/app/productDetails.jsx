@@ -12,6 +12,7 @@ export const ProductDetails = (props) => {
     let productRepository = new ProductsRepository();
     // set up state variable and set state function
     const [product, setProduct] = useState(undefined);
+    const [reviews, setReviews] = useState(undefined);
     // set up use effect hook to mimic componentDidMount()
     const { productId } = useParams();
     useEffect(
@@ -19,11 +20,22 @@ export const ProductDetails = (props) => {
             if (productId) {
                 // call the api to get product details for the product ID from the backend
                 // set the data from the server to the productDetails state variable
-                productRepository.getProduct(productId).then(x => {setProduct(x)});
+                productRepository.getProduct(productId).then(x => {
+                    setProduct(x);
+                    setReviews(x.reviews);
+                });
             }
         },
         []
     )
+    // function variable that calls API to add new review to backend
+    let addNewReview = (newReview) => {
+        productRepository.addReview(productId, newReview)
+        .then(x=>{
+            const r = product.reviews.slice().concat([newReview]);
+            setReviews(r);
+        });
+    }
     // before product has been retrieved from API, display loading...
     if (!product) {
         return <div>loading...</div>
@@ -51,11 +63,11 @@ export const ProductDetails = (props) => {
                 </div>
             </div>
             <br />
-            <ReviewList reviewList={product.reviews} />
+            <ReviewList reviews={reviews} />
             <br />
             <ReviewForm newReview={(username, rating, comment) => {
                 let newOne = new ProductReview(username, rating, comment, new Date());
-                props.addNewReview(newOne);
+                addNewReview(newOne);
             }} />
         </div>
     );

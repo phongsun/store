@@ -31,4 +31,15 @@ export class ProductsRepository {
                 })
         });
     };
+
+    addReview(productId, review){
+        return new Promise((resolve, reject) => {
+            axios.post(`${this.url}/${productId}/reviews`, review, this.config)
+                .then(x => resolve(x.data))
+                .catch(x => {
+                    alert(x);
+                    reject(x);
+                })
+        })
+    }
 }
