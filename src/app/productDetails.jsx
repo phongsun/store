@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-/*import {reviewForm, reviewList} from "./";*/
 import { ProductReview } from "../models/productReview";
-import { Product } from "../models/product";
 import { ReviewForm } from "./reviewForm";
 import { ReviewList } from "./reviewList";
-import { Rating } from "./rating";
 import { ProductsRepository } from '../api/productRepository';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import CartService from '../services/cartService';
 
 export const ProductDetails = (props) => {
     let productRepository = new ProductsRepository();
@@ -28,6 +26,13 @@ export const ProductDetails = (props) => {
         },
         []
     )
+
+    // this is the equivalent of Redirect in class component
+    const navigate = useNavigate();
+    let addToCart = (product) => {
+        props.cartService.addToCart(product);
+        navigate('/cart');
+    }
     // function variable that calls API to add new review to backend
     let addNewReview = (newReview) => {
         productRepository.addReview(productId, newReview)
@@ -58,7 +63,8 @@ export const ProductDetails = (props) => {
                         <h1 className="productDetails-name">{product.name}</h1>
                         <div className="productDetails-price">${product.price}</div>
                         <p>{product.description}</p>
-                        <button className="btn btn-warning align-right">Add to cart</button>
+                        <button type="button" className="btn btn-warning align-right"
+                        onClick={()=>addToCart(product)}>Add to cart</button>
                     </div>
                 </div>
             </div>

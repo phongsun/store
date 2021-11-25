@@ -1,4 +1,3 @@
-import React from 'react';
 
 export class ProductReview{
     constructor(userName, rating, comment, date){

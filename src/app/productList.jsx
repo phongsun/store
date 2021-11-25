@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductsRepository } from "../api/productRepository";
+import CartService from "../services/cartService";
 
 export const ProductList = (props) => {
     let productRepository = new ProductsRepository();
@@ -15,6 +16,13 @@ export const ProductList = (props) => {
         },
         []
     )
+    
+    // this is the equivalent of Redirect in class component
+    const navigate = useNavigate();
+    let addToCart = (product) => {
+        props.cartService.addToCart(product);
+        navigate('/cart');
+    }
     // 3. render
     if (!products) {
         return (
@@ -34,8 +42,9 @@ export const ProductList = (props) => {
                             <div className="col card productList-item"><img src={product.imageUrl} />
                                 <p className="productList-price productList-column">{product.price}</p>
                                 <h2 className="productList-name">{product.name}</h2>
-                                <Link to={`product/${product.id}`} class="btn btn-primary productList-productDetails">Product Details</Link>
-                                <button type="button" className="btn btn-warning">Add to Cart</button>
+                                <Link to={`products/${product.id}`} class="btn btn-primary productList-productDetails">Product Details</Link>
+                                <button type="button" className="btn btn-warning"
+                                onClick={()=>addToCart(product)}>Add to Cart</button>
                             </div>
                     )
                 }
