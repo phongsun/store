@@ -104,3 +104,38 @@
   float: right;
   margin-right: 2em;
 }
+
+* {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.productList-item{
+  margin: 3em;
+  padding-bottom: 1em;
+  align-content: center;
+}
+
+.productList-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  width: 90px;
+  /* padding: 2rem 1rem; */
+  background-color: rgb(33, 203, 6);
+  color: white;
+  border-radius: 7%;
+  margin-bottom: 2rem;
+}
+
+.productList-column {
+  border: 1px;
+}
+
+.productList-name{
+  text-align: center;
+}
+
+.productList-productDetails{
+  margin-bottom: 1em;
+}

@@ -6,19 +6,20 @@ import { ReviewForm } from "./reviewForm";
 import { ReviewList } from "./reviewList";
 import { Rating } from "./rating";
 import { ProductsRepository } from '../api/productRepository';
+import { useParams } from 'react-router-dom';
 
 export const ProductDetails = (props) => {
     let productRepository = new ProductsRepository();
     // set up state variable and set state function
     const [product, setProduct] = useState(undefined);
     // set up use effect hook to mimic componentDidMount()
-    let productId = 1;
+    const { productId } = useParams();
     useEffect(
         () => {
             if (productId) {
                 // call the api to get product details for the product ID from the backend
                 // set the data from the server to the productDetails state variable
-                productRepository.getProduct(productId).then(x => {setProduct(x); debugger;});
+                productRepository.getProduct(productId).then(x => {setProduct(x)});
             }
         },
         []
@@ -45,15 +46,6 @@ export const ProductDetails = (props) => {
                         <h1 className="productDetails-name">{product.name}</h1>
                         <div className="productDetails-price">${product.price}</div>
                         <p>{product.description}</p>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
-                        <br/>
                         <button className="btn btn-warning align-right">Add to cart</button>
                     </div>
                 </div>

@@ -12,27 +12,34 @@ export const ProductList = (props) => {
             // call repository to get data from API
             productRepository.getProducts().then(x => setProducts(x));
             // set products with return data
-        }
+        },
+        []
     )
     // 3. render
-    if(!products){
+    if (!products) {
         return (
             <div>loading...</div>
         )
     }
     return (
-        <div>
-            {
-                products.map(
-                    product =>
-                        <div><img src={product.imageUrl} />
-                            <p>{product.price}</p>
-                            <h2>{product.name}</h2>
-                            <Link to={`product/${product.id}`}>Product Details</Link>
-                            <button type="button">Add to Cart</button>
-                        </div>
-                )
-            }
-        </div>
+        <>
+            <div className="form-group">
+                <h4 className="bg-dark text-white" style={{marginBottom: 0}}>Store</h4>
+                <p className="bg-light text-secondary">Tasty snacks</p>
+            </div>
+            <div className="row">
+                {
+                    products.map(
+                        product =>
+                            <div className="col card productList-item"><img src={product.imageUrl} />
+                                <p className="productList-price productList-column">{product.price}</p>
+                                <h2 className="productList-name">{product.name}</h2>
+                                <Link to={`product/${product.id}`} class="btn btn-primary productList-productDetails">Product Details</Link>
+                                <button type="button" className="btn btn-warning">Add to Cart</button>
+                            </div>
+                    )
+                }
+            </div>
+        </>
     )
 }
