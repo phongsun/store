@@ -15,10 +15,10 @@ export const App = () => {
         <>
         <Router>
             <Routes>
-                <Route element={<Header/>}></Route>
-                <Route path="/products/:productId" element={<ProductDetails cartService={cartService}/>}></Route>
+                {/*<Route path="/products/:productId" element={<ProductDetails cartService={cartService}/>}></Route>
                 <Route path="/cart" element={<MyCart/>}></Route>
-                <Route path="/" element={<ProductList cartService={cartService}/>} exact="true"></Route>
+                <Route path="/" element={<ProductList cartService={cartService}/>} exact="true"></Route>*/}
+                {ROUTES.map((route, index) => <Route key={index} { ...route } />)}
             </Routes>
         </Router>
         </>
