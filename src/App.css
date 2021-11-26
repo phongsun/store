@@ -139,3 +139,33 @@
 .productList-productDetails{
   margin-bottom: 1em;
 }
+
+.breadcrumb-fixed{
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+
+#tha-head-container{
+  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.tha-subhead{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.tha-main-subhead{
+  padding: 1em;
+}
+
+#tha-head{
+  text-decoration: none;
+  margin-left: 0;
+}
+
+#cart-total{
+  text-align: right;
+  margin-right: 4em;
+}

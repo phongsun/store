@@ -3,8 +3,9 @@ import { ProductReview } from "../models/productReview";
 import { ReviewForm } from "./reviewForm";
 import { ReviewList } from "./reviewList";
 import { ProductsRepository } from '../api/productRepository';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import CartService from '../services/cartService';
+import { Header } from './header';
 
 export const ProductDetails = (props) => {
     let productRepository = new ProductsRepository();
@@ -41,17 +42,18 @@ export const ProductDetails = (props) => {
             setReviews(r);
         });
     }
-    // before product has been retrieved from API, display loading...
+    // before product has been retrieved from API, display loading
     if (!product) {
         return <div>loading...</div>
     }
     // after product data has been retrieved from API
     return (
         <div className="container mt-4">
-            <nav className="productDetails-nav">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item" key="0"><a href="#">Tasty snacks</a></li>
-                    <li className="breadcrumb-item active" key="1">{product.name}</li>
+            <Header/>
+            <nav className="productDetails-nav text-secondary tha-subhead">
+                <ol className="breadcrumb breadcrumb-fixed">
+                    <li className="breadcrumb-item breadcrumb-fixed" key="0"><Link to="/">Tasty snacks</Link></li>
+                    <li className="breadcrumb-item active breadcrumb-fixed" key="1">{product.name}</li>
                 </ol>
             </nav>
             <div className="card bg-light text-secondary border-0">
