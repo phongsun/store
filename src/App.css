@@ -1,0 +1,171 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.productDetails-nav{
+  background-color:rgb(205, 205, 205);
+}
+
+.productDetails-name {
+  font-size: 3rem;
+}
+
+.productDetails-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  width: 90px;
+  /* padding: 2rem 1rem; */
+  background-color: rgb(50, 122, 230);
+  color: white;
+  border-radius: 7%;
+  margin-bottom: 2rem;
+}
+
+.grey-review-header{
+  background-color:rgb(205, 205, 205);
+  border:1px;
+  padding: 1rem;
+}
+
+.add-review-reminder {
+  /* Same bg color as jumbotron */
+  background-color: #e9ecef;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.review-padding{
+  padding: 0.4rem;
+  padding-top: 0.5rem;
+  border: 1px;
+}
+
+.review-form{
+  padding-top: 2rem;
+}
+.review-subhead{
+  color: rgb(162, 162, 162);
+  padding-right: 0px;
+  margin-right: 0px;
+  display: inline-block;
+}
+.submit-button{
+  margin-top: 1rem;
+}
+
+.name-rating-box {
+  display: flex;
+}
+
+.input-name {
+  flex-grow: 9;
+}
+.select-rating {
+  flex-grow: 1;
+  margin-left: 1.5rem;
+}
+.align-right {
+  float: right;
+  margin-right: 2em;
+}
+
+* {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.productList-item{
+  margin: 3em;
+  padding-bottom: 1em;
+  align-content: center;
+}
+
+.productList-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  width: 90px;
+  /* padding: 2rem 1rem; */
+  background-color: rgb(33, 203, 6);
+  color: white;
+  border-radius: 7%;
+  margin-bottom: 2rem;
+}
+
+.productList-column {
+  border: 1px;
+}
+
+.productList-name{
+  text-align: center;
+}
+
+.productList-productDetails{
+  margin-bottom: 1em;
+}
+
+.breadcrumb-fixed{
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+
+#tha-head-container{
+  padding: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.tha-subhead{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.tha-main-subhead{
+  padding: 1em;
+}
+
+#tha-head{
+  text-decoration: none;
+  margin-left: 0;
+}
+
+#cart-total{
+  text-align: right;
+  margin-right: 4em;
+}
