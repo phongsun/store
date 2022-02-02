@@ -7,6 +7,7 @@ import { ProductList } from "./productList";
 import { MyCart } from "./myCart";
 import CartService from "../services/cartService";
 import { Header } from "./header";
+import { ROUTES } from "../routes";
 
 export const App = () => {
     let cartService = new CartService();
