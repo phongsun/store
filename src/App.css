@@ -169,3 +169,10 @@
   text-align: right;
   margin-right: 4em;
 }
+
+img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  object-fit: cover;
+}

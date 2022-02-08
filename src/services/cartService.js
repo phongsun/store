@@ -2,6 +2,9 @@ import Cart from './../models/cart';
 import CartItem from './../models/cartItem';
 
 export class CartService {
+    callBitch() {
+        alert("hoe");
+    }
     getCart() {
         return window.cart || new Cart();
     }
